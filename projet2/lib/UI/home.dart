@@ -39,7 +39,7 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('BottomNavigationBar Sample')),
+      appBar: AppBar(title: const Text('BottomNavigationBar Sample')),  // A modifier ici , style : Theme.of(context).appBarTheme.titleTextStyle
       body: Center(child: _widgetOptions.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
