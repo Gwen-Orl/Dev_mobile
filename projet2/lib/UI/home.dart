@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:projet2/UI/ecran1.dart';
+import 'package:projet2/UI/ecran2.dart';
+import 'package:projet2/UI/ecran3.dart';
 
 /// Flutter code sample for [BottomNavigationBar].
 
@@ -13,7 +16,6 @@ class BottomNavigationBarExampleApp extends StatelessWidget {
     return const MaterialApp(home: BottomNavigationBarExample());
   }
 }
-
 class BottomNavigationBarExample extends StatefulWidget {
   const BottomNavigationBarExample({super.key});
 
@@ -25,8 +27,9 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('Index 0: Home', style: optionStyle),
-    Text('Index 1: Business', style: optionStyle),
+    ecran1(),
+    ecran2(),
+    ecran3(),
     Text('Index 2: School', style: optionStyle),
   ];
 
@@ -44,8 +47,8 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Business'),
-          BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
+          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Wabeille'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: 'Foucher'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],

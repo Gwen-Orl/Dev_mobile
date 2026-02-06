@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 
-class ecran3 extends StatelessWidget{
-  final String message;
-
-  const ecran3(this.message);
+class ecran3 extends StatelessWidget {
+  const ecran3({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    throw UnimplementedError();
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Ecran Foucher'),
+          centerTitle: true,
+          backgroundColor: Colors.purple,
+        ),
+        backgroundColor: Colors.brown,
+        body: NotificationListener(
+            child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    const Text("Villerable"),
+                  ],
+                )
+            )
+        )
+    );
   }
 }
+
