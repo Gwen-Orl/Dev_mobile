@@ -1,27 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:projet2/modele/task.dart';
 
+class ecran2 extends StatelessWidget {
+  const ecran2({super.key});
 
-class ecran1 extends StatelessWidget {
-
-  ecran1({super.key});
-  late List<Task> myTasks;
   @override
   Widget build(BuildContext context) {
-    myTasks = Task.generateTask(5);
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Ecran Wyatt'),
+          title: const Text('Bonsoir Paris'),
           centerTitle: true,
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.red,
         ),
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.lightBlue,
         body: NotificationListener(
             child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const Text("Chaptain Ville"),
+                    const Text("Sullylois"),
                   ],
                 )
             )
