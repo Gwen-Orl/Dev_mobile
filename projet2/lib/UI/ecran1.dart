@@ -18,7 +18,7 @@ class ecran1 extends StatelessWidget {
             elevation: 7,
             margin: const EdgeInsets.all(10),
             child: ListTile(
-              leading: CircleAvatar(backgroundColor: Colors.lightBlue, child:Text(myTasks[index].id.toString())),
+              leading: CircleAvatar(backgroundColor: Colors.greenAccent, child:Text(myTasks[index].id.toString())),
               title:Text(myTasks[index].title),
               subtitle: Text(myTasks[index].tags.join(" ")),
               trailing: IconButton(

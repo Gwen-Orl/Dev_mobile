@@ -10,12 +10,12 @@ import '../modele/task.dart';
 class MyAPI{
   Future<List<Task>> getTasks() async{
     await Future.delayed(Duration(seconds: 1));
-    final dataString = await _loadAsset('assets/json/tasks.json');
+    final dataString = await _loadAsset('data/tasks.json');
     final Map<String,dynamic> json = jsonDecode(dataString);
     if (json['tasks']!=null){
       final tasks = <Task>[];
       json['tasks'].forEach((element){
-        tasks.add(element);
+        tasks.add(Task.fromJson(element));
       });
       return tasks;
     }else{
