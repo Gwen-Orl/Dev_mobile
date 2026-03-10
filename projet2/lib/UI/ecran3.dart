@@ -10,7 +10,7 @@ class ecran3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: MyAPI().getTasks(),
+        future: MyAPI().getTodos(),
         builder: (context, snapshot){
           if (snapshot.connectionState!=ConnectionState.done && !snapshot.hasData){
             return const Center(
@@ -31,9 +31,8 @@ class ecran3 extends StatelessWidget {
                   margin: const EdgeInsets.all(10),
                   child :
                   ListTile(
-                    leading: CircleAvatar(backgroundColor: Colors.green, child:Text(snapshot.data?[index].id.toString()??""),),
+                    leading: CircleAvatar(backgroundColor: Colors.orange, child:Text(snapshot.data?[index].id.toString()??""),),
                     title: Text(snapshot.data?[index].title??""),
-                    subtitle: Text(snapshot.data?[index].tags.join(" ")??""),
                     trailing: IconButton(
                       icon: const Icon(Icons.edit),
                       onPressed: () {

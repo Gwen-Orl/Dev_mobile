@@ -3,8 +3,6 @@ import 'package:projet2/UI/ecran1.dart';
 import 'package:projet2/UI/ecran2.dart';
 import 'package:projet2/UI/ecran3.dart';
 
-/// Flutter code sample for [BottomNavigationBar].
-
 void main() => runApp(const BottomNavigationBarExampleApp());
 
 class BottomNavigationBarExampleApp extends StatelessWidget {

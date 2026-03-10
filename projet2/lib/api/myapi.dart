@@ -3,8 +3,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
 
 import '../modele/task.dart';
+import '../modele/todo.dart';
 
 
 class MyAPI{
@@ -19,6 +21,20 @@ class MyAPI{
       });
       return tasks;
     }else{
+      return [];
+    }
+  }
+  Future<List<Todo>> getTodos() async{
+    final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
+    if (response.statusCode==200){
+      final List<dynamic> json = jsonDecode(response.body);
+      final todos = <Todo>[];
+      for(var element in json){
+        todos.add(Todo.fromJson(element));
+      };
+      return todos;
+    }
+    else{
       return [];
     }
   }
