@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet2/UI/EcranSetting.dart';
 import 'package:projet2/UI/ecran1.dart';
 import 'package:projet2/UI/ecran2.dart';
 import 'package:projet2/UI/ecran3.dart';
@@ -28,7 +29,7 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
     ecran1(),
     ecran2(),
     ecran3(),
-    Text('Index 2: School', style: optionStyle),
+    EcranSetting(),
   ];
 
   void _onItemTapped(int index) {
@@ -47,6 +48,7 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Wabeille'),
           BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: 'Foucher'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Edwige'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
