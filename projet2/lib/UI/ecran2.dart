@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../modele/task.dart';
 import 'package:flutter/material.dart';
 import '../api/myapi.dart';
+import 'detail.dart';
 
 class ecran2 extends StatelessWidget {
   ecran2({super.key});
@@ -38,11 +39,20 @@ class ecran2 extends StatelessWidget {
                       onPressed: () {
                       },
                     ),
-                  ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (context) => detail(task: snapshot.data![index]),
+                        ),
+                      );
+                    },
+                  )
                 );
-              },
-            );
-          }
+              }
+              );
+            }
+
           return Container();
         }
 
