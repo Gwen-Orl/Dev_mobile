@@ -12,7 +12,7 @@ class BottomNavigationBarExampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: BottomNavigationBarExample());
+    return const BottomNavigationBarExample();
   }
 }
 class BottomNavigationBarExample extends StatefulWidget {
