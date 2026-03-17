@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projet2/modele/task.dart';
+import 'package:projet2/viewmodel/task_view_model.dart';
+import 'package:provider/provider.dart';
 
 
 class ecran1 extends StatelessWidget {
@@ -9,7 +11,7 @@ class ecran1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    myTasks = Task.generateTask(5);
+    myTasks = context.watch<TaskViewModel>().liste;
     return ListView.builder(
         itemCount: myTasks.length,
         itemBuilder: (BuildContext context, int index) {

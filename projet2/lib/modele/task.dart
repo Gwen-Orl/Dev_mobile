@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 
 class Task {
   int id;
+  static int nb=0;
   String title;
   List<String> tags;
   int nbhours;
-  int difficuty;
+  int difficulty;
   String description;
-  Color color;
   Task({required this.id,required this.title,required this.tags,required
-  this.nbhours,required this.difficuty,required this.description, required this.color});
+  this.nbhours,required this.difficulty,required this.description});
   static List<Task> generateTask(int i){
     List<Task> tasks=[];
     for(int n=0;n<i;n++){
-      tasks.add(Task(id: n, title: "title $n", tags: ['tag $n','tag${n+1}'], nbhours: n, difficuty: n, description: '$n', color:Colors.black));
+      tasks.add(Task(id: n, title: "title $n", tags: ['tag $n','tag${n+1}'], nbhours: n, difficulty: n, description: '$n'));
     }
     return tasks;
   }
@@ -34,8 +34,15 @@ class Task {
         title: json['title'],
         tags: tags,
         nbhours: json['nbhours'],
-        difficuty: json['difficulty'],
+        difficulty: json['difficulty'],
         description: json['description'],
-        color: clr);
+        );
   }
+
+  factory Task.newTask(){
+    nb++; //attribut static de la classe.
+    return Task(id: nb, title: 'title $nb', tags: ['tags $nb'], nbhours:
+    nb, difficulty: nb%5, description: 'description $nb');
+  }
+
 }
