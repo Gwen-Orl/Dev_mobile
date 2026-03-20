@@ -4,6 +4,8 @@ import 'package:projet2/UI/ecran1.dart';
 import 'package:projet2/UI/ecran2.dart';
 import 'package:projet2/UI/ecran3.dart';
 
+import 'AddTask.dart';
+
 void main() => runApp(const BottomNavigationBarExampleApp());
 
 class BottomNavigationBarExampleApp extends StatelessWidget {
@@ -54,6 +56,14 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
         selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
       ),
+      floatingActionButton: _selectedIndex==0?FloatingActionButton(
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => AddTask(),
+          )
+          );
+        },
+        child: const Icon(Icons.add),):const SizedBox.shrink(),
     );
   }
 }
