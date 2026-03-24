@@ -29,19 +29,19 @@ class AddTaskState extends State<AddTask>{
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               FormBuilderTextField(name: 'title', decoration: const InputDecoration(),
-                validator: FormBuilderValidators.compose([FormBuilderValidators.required]),
+                validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
               FormBuilderTextField(name: 'description', decoration: const InputDecoration(),
-                validator: FormBuilderValidators.compose([FormBuilderValidators.required]),
+                validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
               FormBuilderTextField(name: 'tags', decoration: const InputDecoration(),
-                validator: FormBuilderValidators.compose([FormBuilderValidators.required]),
+                validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
               FormBuilderTextField(name: 'difficulty', decoration: const InputDecoration(),
-                validator: FormBuilderValidators.compose([FormBuilderValidators.required]),
+                validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
               FormBuilderTextField(name: 'nbhours', decoration: const InputDecoration(),
-                validator: FormBuilderValidators.compose([FormBuilderValidators.required]),
+                validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -53,10 +53,13 @@ class AddTaskState extends State<AddTask>{
                     context.read<TaskViewModel>().insertTask(
                       Task.createTask(_formKey.currentState?.fields['title']?.value,
                                       _formKey.currentState?.fields['tags']?.value,
-                                      int.parse(_formKey.currentState)
-                    )
+                                      int.parse(_formKey.currentState?.fields['nbhours']?.value),
+                                      int.parse(_formKey.currentState?.fields['difficulty']?.value),
+                                      _formKey.currentState?.fields['description']?.value
+                    ));
+                    Navigator.pop(context);
                   }
-                },
+                }, child: const Text('Add'),
               )
             ],
           )
