@@ -48,9 +48,9 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Wabeille'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: 'Foucher'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Edwige'),
+          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'API'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: 'API REST'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],

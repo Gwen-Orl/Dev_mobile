@@ -47,4 +47,5 @@ app.*.map.json
 /test/
 /web/
 /windows/
+/macos/Flutter/GeneratedPluginRegistrant.swift
 .metadata
