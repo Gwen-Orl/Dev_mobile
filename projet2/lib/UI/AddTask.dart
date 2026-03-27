@@ -50,7 +50,7 @@ class AddTaskState extends State<AddTask>{
                 ),
                 onPressed: (){
                   if (_formKey.currentState!.validate()){
-                    context.read<TaskViewModel>().insertTask(
+                    context.read<TaskViewModel>().addTask(
                       Task.createTask(_formKey.currentState?.fields['title']?.value,
                                       _formKey.currentState?.fields['tags']?.value,
                                       int.parse(_formKey.currentState?.fields['nbhours']?.value),

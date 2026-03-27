@@ -45,4 +45,9 @@ class Task {
     nb, difficulty: nb%5, description: 'description $nb');
   }
 
+  static Task createTask(title, tags, nbhours, difficulty, description){
+    return Task(id: nb, title: title, tags: tags, nbhours: nbhours, difficulty: difficulty, description: description);
+  }
+
+
 }
