@@ -28,19 +28,19 @@ class AddTaskState extends State<AddTask>{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              FormBuilderTextField(name: 'title', decoration: const InputDecoration(),
+              FormBuilderTextField(name: 'title', decoration: const InputDecoration(labelText: 'Titre de la tâche'),
                 validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
-              FormBuilderTextField(name: 'description', decoration: const InputDecoration(),
+              FormBuilderTextField(name: 'description', decoration: const InputDecoration(labelText: 'Description de la tâche'),
                 validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
-              FormBuilderTextField(name: 'tags', decoration: const InputDecoration(),
+              FormBuilderTextField(name: 'tags', decoration: const InputDecoration(labelText: 'Tags associés de la tâche'),
                 validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
-              FormBuilderTextField(name: 'difficulty', decoration: const InputDecoration(),
+              FormBuilderTextField(name: 'difficulty', decoration: const InputDecoration(labelText: 'Difficulté de la tâche'),
                 validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
-              FormBuilderTextField(name: 'nbhours', decoration: const InputDecoration(),
+              FormBuilderTextField(name: 'nbhours', decoration: const InputDecoration(labelText: 'Nb heures de la tache'),
                 validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
               ),
               ElevatedButton(
@@ -55,16 +55,16 @@ class AddTaskState extends State<AddTask>{
                                       _formKey.currentState?.fields['tags']?.value,
                                       int.parse(_formKey.currentState?.fields['nbhours']?.value),
                                       int.parse(_formKey.currentState?.fields['difficulty']?.value),
-                                      _formKey.currentState?.fields['description']?.value
-                    ));
+                                      _formKey.currentState?.fields['description']?.value));
                     Navigator.pop(context);
                   }
-                }, child: const Text('Add'),
+                },
+                child: const Text('Add'),
               )
             ],
           )
         ),
       ),
-    ) ;
+    );
   }
 }

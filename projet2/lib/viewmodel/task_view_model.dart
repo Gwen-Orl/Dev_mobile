@@ -13,6 +13,14 @@ class TaskViewModel extends ChangeNotifier{
     liste.add(task);
     notifyListeners();
   }
+
+  void editTask(Task task){
+    int index = liste.indexWhere((t) => t.id == task.id);
+    if (index != 1){
+      liste[index] = task;
+      notifyListeners();
+    }
+  }
   void generateTasks(){
     liste = Task.generateTask(50);
     notifyListeners();

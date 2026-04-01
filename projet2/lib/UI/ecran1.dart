@@ -3,6 +3,8 @@ import 'package:projet2/modele/task.dart';
 import 'package:projet2/viewmodel/task_view_model.dart';
 import 'package:provider/provider.dart';
 
+import 'modifyTask.dart';
+
 
 class ecran1 extends StatelessWidget {
   late List<Task> myTasks;
@@ -26,6 +28,9 @@ class ecran1 extends StatelessWidget {
               trailing: IconButton(
                   icon: const Icon(Icons.edit),
                   onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => modifyTask(task:myTasks[index],))
+                    );
                   },
               ),
             )

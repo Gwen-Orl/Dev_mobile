@@ -45,8 +45,19 @@ class Task {
     nb, difficulty: nb%5, description: 'description $nb');
   }
 
+
+
   static Task createTask(title, tags, nbhours, difficulty, description){
-    return Task(id: nb, title: title, tags: tags, nbhours: nbhours, difficulty: difficulty, description: description);
+    int debut_mot = 0;
+    print("On crée une task");
+    List<String> tags_list=[];
+    for(int n=0;n<tags.length;n++){
+      if(tags[n]==','){
+        tags_list.add(tags.substring(debut_mot, n));
+        debut_mot=n+1;
+      }
+    }
+    return Task(id: nb, title: title, tags: tags_list, nbhours: nbhours, difficulty: difficulty, description: description);
   }
 
 

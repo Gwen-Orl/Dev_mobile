@@ -24,7 +24,7 @@ class MyTD2 extends StatelessWidget{
         ChangeNotifierProvider(
             create:(_){
               TaskViewModel taskViewModel = TaskViewModel();
-              taskViewModel.generateTasks();
+
               return taskViewModel;
             } )
       ],
