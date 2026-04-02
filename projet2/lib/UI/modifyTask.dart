@@ -52,11 +52,12 @@ class modifyTaskState extends State<modifyTask>{
                   onPressed: (){
                     if (_formKey.currentState!.validate()){
                       context.read<TaskViewModel>().editTask(
-                          Task.createTask(_formKey.currentState?.fields['title']?.value,
-                              _formKey.currentState?.fields['tags']?.value,
-                              int.parse(_formKey.currentState?.fields['nbhours']?.value),
-                              int.parse(_formKey.currentState?.fields['difficulty']?.value),
-                              _formKey.currentState?.fields['description']?.value));
+                          widget.task,
+                          _formKey.currentState?.fields['title']?.value,
+                          _formKey.currentState?.fields['tags']?.value,
+                          int.parse(_formKey.currentState?.fields['nbhours']?.value),
+                          int.parse(_formKey.currentState?.fields['difficulty']?.value),
+                          _formKey.currentState?.fields['description']?.value);
                       Navigator.pop(context);
                     }
                   },

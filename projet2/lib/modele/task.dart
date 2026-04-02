@@ -48,6 +48,7 @@ class Task {
 
 
   static Task createTask(title, tags, nbhours, difficulty, description){
+    nb++;
     int debut_mot = 0;
     print("On crée une task");
     List<String> tags_list=[];

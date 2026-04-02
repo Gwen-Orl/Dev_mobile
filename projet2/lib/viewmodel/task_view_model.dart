@@ -14,7 +14,7 @@ class TaskViewModel extends ChangeNotifier{
     notifyListeners();
   }
 
-  void editTask(Task task){
+  void editTask(Task task, title, tags, nbhours, difficulty, description){
     int index = liste.indexWhere((t) => t.id == task.id);
     if (index != 1){
       liste[index] = task;

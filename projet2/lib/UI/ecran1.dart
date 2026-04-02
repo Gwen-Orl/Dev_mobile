@@ -23,13 +23,13 @@ class ecran1 extends StatelessWidget {
             margin: const EdgeInsets.all(10),
             child: ListTile(
               leading: CircleAvatar(backgroundColor: Colors.greenAccent, child:Text(myTasks[index].id.toString())),
-              title:Text(myTasks[index].title),
+              title:Text(index.toString()),
               subtitle: Text(myTasks[index].tags.join(" ")),
               trailing: IconButton(
                   icon: const Icon(Icons.edit),
                   onPressed: (){
                     Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => modifyTask(task:myTasks[index],))
+                      builder: (context) => modifyTask(task:myTasks[index]))
                     );
                   },
               ),
